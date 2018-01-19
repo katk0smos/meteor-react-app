@@ -1,11 +1,6 @@
 import React from 'react';
 
 export default class Header extends React.Component {
-    /*
-    { Meteor.user() &&
-        <li><a href="/account"><i className="material-icons left">account_box</i>{Meteor.users.findOne(Meteor.userId()).first_name}</a></li>
-    }
-    */
   render() {
     return (
       <header className='Header'>
@@ -16,7 +11,9 @@ export default class Header extends React.Component {
                         <li><a href="#" data-activates="slide-out" className="button-collapse show-on-large" id="sideNavBtn"><i className="material-icons">menu</i></a></li>
                     </ul>
                     <ul className="right">
-
+                        { Meteor.user() &&
+                            <li><a href="/account"><i className="material-icons left">account_box</i>{Meteor.users.findOne(Meteor.userId()).first_name}</a></li>
+                        }
                     </ul>
                 </div>
             </nav>

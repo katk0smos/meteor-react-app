@@ -1,3 +1,4 @@
+import { Accounts } from 'meteor/accounts-base'
 import React from 'react';
 let classNames = require('classnames');
 
@@ -125,12 +126,13 @@ export default class Register extends React.Component {
                 password: this.state.password.value,
                 phone_number: this.state.phone_number.value,
 
-                //profile: 'default-group'
+                profile: 'default-group',
             };
             sleep(2000).then(() => {
                 Accounts.createUser(accountInfo, function(err) {
                     if (err) {
                         console.log("Error creating user");
+                        console.log(err);
                         Materialize.Toast.removeAll();
                         Materialize.toast("There was an error creating your account. Please try again later. If this error persists, contact support.", 8000);
                     } else {
@@ -138,6 +140,7 @@ export default class Register extends React.Component {
                         Meteor.loginWithPassword(email, password, function(err) {
                             if (err) {
                                 console.log("Error logging in");
+                                console.log(err);
                                 Materialize.Toast.removeAll();
                                 Materialize.toast("There was an error logging you in. Try logging in manually. If this error persists, contact support.", 8000);
                             } else {

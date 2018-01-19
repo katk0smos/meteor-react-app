@@ -1,13 +1,10 @@
 import React from 'react';
 //import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
 import Header from '../components/Header/Header.jsx';
 import SideNav from '../components/SideNav/SideNav.jsx';
 import Footer from '../components/Footer/Footer.jsx';
-import Home from '../pages/Home.jsx';
-import Register from '../components/Login/Register.jsx';
-import Login from '../components/Login/Login.jsx';
-import NotFound from '../pages/NotFound.jsx';
 
 export default class MainLayout extends React.Component {
     /*
